@@ -344,6 +344,23 @@
       color: var(--accent) !important;
     }
 
+    .nav-instagram {
+      display: flex;
+      align-items: center;
+      color: var(--cream);
+      opacity: 0.7;
+      transition: color 0.3s, opacity 0.3s;
+    }
+
+    .nav-instagram:hover {
+      color: var(--accent) !important;
+      opacity: 1;
+    }
+
+    .nav-instagram svg {
+      display: block;
+    }
+
     .lang-toggle {
       display: flex;
       gap: 0.6rem;
@@ -1245,62 +1262,9 @@
       font-weight: 300;
     }
 
-    /* Rates table */
-    .rates-table table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .rates-table th {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: 0.58rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--accent);
-      padding: 0 0 1.2rem;
-      text-align: left;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .rates-table td {
-      padding: 1.3rem 0;
-      border-bottom: 1px solid var(--rule);
-      vertical-align: middle;
-    }
-
-    .rates-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .rate-season {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 1.05rem;
-      letter-spacing: 0.06em;
-      color: var(--cream);
-    }
-
-    .rate-period {
-      font-family: 'Inter', sans-serif;
-      font-weight: 200;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-    }
-
-    .rate-price {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-style: italic;
-      font-size: 1.4rem;
-      color: var(--accent);
-    }
-
     .house-rules {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--rule);
+      margin-top: 0;
+      padding-top: 0;
     }
 
     .house-rules .label {
@@ -1513,6 +1477,14 @@
 
     .footer-col a:hover {
       color: var(--cream);
+    }
+
+    .footer-instagram:hover {
+      color: var(--accent) !important;
+    }
+
+    .footer-instagram:hover svg {
+      stroke: var(--accent);
     }
 
     .footer-bottom {
@@ -1731,6 +1703,15 @@
           <span class="lang-sep">/</span>
           <button class="lang-btn" onclick="setLang('hu')">HU</button>
         </div>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/tibicasablu/" target="_blank" rel="noopener" class="nav-instagram" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
       </li>
     </ul>
     <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
@@ -2289,58 +2270,6 @@
           </div>
         </div>
         <div class="reveal reveal-d2">
-          <div class="rates-table">
-            <span class="label" style="display:block; margin-bottom:2rem;" data-lang="en">Seasonal Rates</span>
-            <span class="label" style="display:block; margin-bottom:2rem;" data-lang="hu">Szezonális Árak</span>
-            <table>
-              <thead>
-                <tr>
-                  <th data-lang="en">Season</th>
-                  <th data-lang="hu">Szezon</th>
-                  <th data-lang="en">Period</th>
-                  <th data-lang="hu">Időszak</th>
-                  <th data-lang="en">Per Night</th>
-                  <th data-lang="hu">Éjszakánként</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><span class="rate-season" data-lang="en">Low Season</span><span class="rate-season"
-                      data-lang="hu">Alacsony szezon</span></td>
-                  <td><span class="rate-period">November — March</span></td>
-                  <td><span class="rate-price">— Enquire</span></td>
-                </tr>
-                <tr>
-                  <td><span class="rate-season" data-lang="en">Mid Season</span><span class="rate-season"
-                      data-lang="hu">Közép szezon</span></td>
-                  <td><span class="rate-period">April — May &ensp;·&ensp; October</span></td>
-                  <td><span class="rate-price">— Enquire</span></td>
-                </tr>
-                <tr>
-                  <td><span class="rate-season" data-lang="en">High Season</span><span class="rate-season"
-                      data-lang="hu">Fő szezon</span></td>
-                  <td><span class="rate-period">June &ensp;·&ensp; September</span></td>
-                  <td><span class="rate-price">— Enquire</span></td>
-                </tr>
-                <tr>
-                  <td><span class="rate-season" data-lang="en">Peak Season</span><span class="rate-season"
-                      data-lang="hu">Csúcsszezon</span></td>
-                  <td><span class="rate-period">July — August</span></td>
-                  <td><span class="rate-price">— Enquire</span></td>
-                </tr>
-              </tbody>
-            </table>
-            <p style="font-family:'Inter',sans-serif; font-weight:200; font-size:0.65rem; color:var(--muted); margin-top:1.5rem; line-height:1.85; letter-spacing:0.04em;"
-              data-lang="en">
-              Rates available on direct enquiry. Minimum stay may apply. Contact TiBi for precise availability and
-              current pricing.
-            </p>
-            <p style="font-family:'Inter',sans-serif; font-weight:200; font-size:0.65rem; color:var(--muted); margin-top:1.5rem; line-height:1.85; letter-spacing:0.04em;"
-              data-lang="hu">
-              Az árak közvetlen érdeklődésre elérhetők. Minimális tartózkodás lehet. Vegye fel a kapcsolatot TiBivel a
-              pontos elérhetőségért és az aktuális árakért.
-            </p>
-          </div>
           <div class="house-rules">
             <span class="label" data-lang="en">House Protocol</span>
             <span class="label" data-lang="hu">Házirend</span>
@@ -2559,9 +2488,15 @@
             <li>TiBi</li>
             <li data-lang="en">English &ensp; German &ensp; Hungarian</li>
             <li data-lang="hu">Angol &ensp; Német &ensp; Magyar</li>
-            <!-- REPLACE with Instagram handle -->
-            <li style="margin-top:0.5rem;"><a href="#" target="_blank" rel="noopener" data-lang="en">Instagram</a><a
-                href="#" target="_blank" rel="noopener" data-lang="hu">Instagram</a></li>
+            <li style="margin-top:0.5rem;">
+              <a href="https://www.instagram.com/tibicasablu/" target="_blank" rel="noopener" class="footer-instagram">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:0.4em;">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+                </svg><span data-lang="en">Follow on Instagram</span><span data-lang="hu">Kövess Instagramon</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
