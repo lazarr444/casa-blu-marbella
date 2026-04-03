@@ -165,11 +165,12 @@ export default function App() {
                   title="Google Map of Casa Blu"
                   width="100%"
                   height="100%"
-                  frameBorder="0"
-                  scrolling="no"
-                  marginHeight="0"
-                  marginWidth="0"
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=Urb.+Pueblo+Andaluz+160,+29604+Marbella,+M%C3%A1laga,+Spain"
+                  src="https://www.google.com/maps?q=Urb.+Pueblo+Andaluz+160,+29604+Marbella,+Malaga,+Spain&output=embed"
+                  width="100%"
+                  height="450"
+                  style={{border:0}}
+                  allowFullScreen=""
+                  loading="lazy"
                   className="rounded-lg"
                 ></iframe>
               </div>
