@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(mkdir -p /Users/zala-kovacslazar/casa-blu-marbella/images)",
+      "Bash(cp /Users/zala-kovacslazar/Downloads/481782481.jpg /Users/zala-kovacslazar/casa-blu-marbella/images/photo-01.jpg)",
+      "Bash(cp /Users/zala-kovacslazar/Downloads/526378837.jpg /Users/zala-kovacslazar/casa-blu-marbella/images/photo-02.jpg)",
+      "Bash(cp /Users/zala-kovacslazar/Downloads/648453985.jpg /Users/zala-kovacslazar/casa-blu-marbella/images/photo-03.jpg)",
+      "Bash(cp /Users/zala-kovacslazar/Downloads/652526306.jpg /Users/zala-kovacslazar/casa-blu-marbella/images/photo-04.jpg)",
+      "Bash(open:*)"
+    ]
+  }
+}

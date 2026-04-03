@@ -1,0 +1,2867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Blu — Private Residence, Marbella</title>
+  <meta name="description"
+    content="Casa Blu Marbella. A private residence on the Andalusian coast. Four suites, private pool, sea-view terrace. Direct reservations with the owner.">
+  <meta name="keywords"
+    content="villa marbella rent, casa blu marbella, private pool marbella, marbella villa rental, andalucia private residence">
+  <meta property="og:title" content="Casa Blu — Private Residence, Marbella">
+  <meta property="og:description" content="Four suites. Private pool. The Andalusian coast.">
+  <meta property="og:image" content="images/photo-05.jpg">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@200;300;400&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ─── FOUNDATION ─── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border-radius: 0 !important;
+    }
+
+    :root {
+      --black: #080808;
+      --deep: #0c0c0c;
+      --cream: #ede9e0;
+      --muted: rgba(237, 233, 224, 0.55);
+      --faint: rgba(237, 233, 224, 0.22);
+      --blue: #0f1f35;
+      --accent: #7DB9D9;
+      --accent-dim: rgba(125, 185, 217, 0.35);
+      --rule: rgba(237, 233, 224, 0.12);
+      --easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --slow: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 200;
+      line-height: 1.75;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* Touch devices: restore cursor */
+    @media (pointer: coarse) {
+      body {
+        cursor: auto;
+      }
+
+      .cursor,
+      .cursor-ring {
+        display: none !important;
+      }
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: none;
+      border: none;
+      background: none;
+      font-family: inherit;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ─── CUSTOM CURSOR ─── */
+    .cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--cream);
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width 0.25s var(--easing),
+        height 0.25s var(--easing),
+        opacity 0.25s;
+    }
+
+    .cursor.hovering {
+      width: 3px;
+      height: 3px;
+      opacity: 0.6;
+    }
+
+    .cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(237, 233, 224, 0.35);
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.12s linear,
+        width 0.3s var(--easing),
+        height 0.3s var(--easing),
+        border-color 0.3s;
+    }
+
+    .cursor-ring.hovering {
+      width: 46px;
+      height: 46px;
+      border-color: var(--accent);
+    }
+
+    /* ─── PRELOADER ─── */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 2rem;
+      transition: opacity 1s ease 0.6s, visibility 1s ease 0.6s;
+    }
+
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .preloader-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 2.2rem;
+      letter-spacing: 0.35em;
+      color: var(--cream);
+      opacity: 0;
+      animation: preloaderFade 0.9s ease 0.2s forwards;
+    }
+
+    .preloader-line {
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      animation: preloaderLine 0.8s ease 0.5s forwards;
+    }
+
+    @keyframes preloaderFade {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes preloaderLine {
+      to {
+        width: 120px;
+      }
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    .display {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      color: var(--cream);
+    }
+
+    .display-upright {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: normal;
+      line-height: 0.95;
+      letter-spacing: 0.12em;
+      color: var(--cream);
+      text-transform: uppercase;
+    }
+
+    .label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .body-text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.92rem;
+      line-height: 1.95;
+      color: var(--muted);
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.62rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      padding: 1rem 2.4rem;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      transition: background 0.35s var(--easing),
+        color 0.35s var(--easing);
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: var(--black);
+    }
+
+    .btn-cream {
+      border-color: var(--cream);
+      color: var(--cream);
+    }
+
+    .btn-cream:hover {
+      background: var(--cream);
+      color: var(--black);
+    }
+
+    .text-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.62rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      position: relative;
+      display: inline-block;
+    }
+
+    .text-link::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.4s var(--easing);
+    }
+
+    .text-link:hover::after {
+      width: 100%;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      padding: 2.2rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: padding 0.5s var(--easing), background 0.5s var(--easing);
+    }
+
+    nav.scrolled {
+      padding: 1.3rem 4rem;
+      background: rgba(8, 8, 8, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      color: var(--cream);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(237, 233, 224, 0.5);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cream);
+    }
+
+    .nav-reserve {
+      color: var(--accent) !important;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 1px;
+      transition: border-color 0.3s, color 0.3s !important;
+    }
+
+    .nav-reserve:hover {
+      border-bottom-color: var(--accent);
+      color: var(--accent) !important;
+    }
+
+    .lang-toggle {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .lang-btn {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(237, 233, 224, 0.3);
+      transition: color 0.25s;
+      cursor: none;
+    }
+
+    .lang-btn.active {
+      color: var(--accent);
+    }
+
+    .lang-sep {
+      color: rgba(237, 233, 224, 0.15);
+      font-size: 0.6rem;
+    }
+
+    .nav-mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: none;
+    }
+
+    .nav-mobile-toggle span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--cream);
+      transition: all 0.3s;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      height: 100svh;
+      min-height: 650px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/photo-05.jpg') center 35%/cover no-repeat;
+      will-change: transform;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(8, 8, 8, 0.38) 0%,
+          rgba(8, 8, 8, 0.22) 45%,
+          rgba(8, 8, 8, 0.62) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 2rem;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 1.2s var(--slow) 0.4s,
+        transform 1.2s var(--slow) 0.4s;
+    }
+
+    .hero-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-location {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: rgba(237, 233, 224, 0.6);
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(5.5rem, 14vw, 14rem);
+      line-height: 0.88;
+      letter-spacing: -0.01em;
+      color: var(--cream);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-rule {
+      width: 60px;
+      height: 1px;
+      background: rgba(125, 185, 217, 0.6);
+      margin: 0 auto 2.2rem;
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      letter-spacing: 0.08em;
+      color: rgba(237, 233, 224, 0.72);
+      margin-bottom: 3rem;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.8s forwards;
+    }
+
+    .hero-scroll span {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(237, 233, 224, 0.35);
+    }
+
+    .scroll-tick {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollDrop 2.2s ease-in-out infinite;
+    }
+
+    @keyframes scrollDrop {
+      0% {
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+      }
+
+      40% {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+      }
+
+      80% {
+        opacity: 0;
+        transform: scaleY(1);
+        transform-origin: bottom;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* ─── MANIFESTO BAR ─── */
+    .manifesto-bar {
+      padding: 2.8rem 4rem;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3.5rem;
+      background: var(--deep);
+    }
+
+    .manifesto-stat {
+      text-align: center;
+    }
+
+    .manifesto-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.6rem;
+      color: var(--cream);
+      letter-spacing: 0.05em;
+      display: block;
+    }
+
+    .manifesto-stat-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.58rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    .manifesto-divider {
+      width: 1px;
+      height: 36px;
+      background: var(--rule);
+      flex-shrink: 0;
+    }
+
+    /* ─── SECTION SCAFFOLDING ─── */
+    section {
+      position: relative;
+    }
+
+    .wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 4rem;
+    }
+
+    /* ─── THE RESIDENCE ─── */
+    #residence {
+      padding: 11rem 0 9rem;
+    }
+
+    .residence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+      align-items: center;
+    }
+
+    .residence-text .label {
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    .residence-text .display {
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      margin-bottom: 3rem;
+      line-height: 1.05;
+    }
+
+    .residence-text .body-text {
+      margin-bottom: 1.8rem;
+    }
+
+    .residence-text .body-text:last-of-type {
+      margin-bottom: 3rem;
+    }
+
+    .residence-image {
+      position: relative;
+    }
+
+    .residence-image img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+
+    .residence-image-caption {
+      position: absolute;
+      bottom: -3.5rem;
+      left: 0;
+      right: 0;
+    }
+
+    .residence-image-caption hr {
+      margin-bottom: 1rem;
+    }
+
+    .residence-caption-text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      margin-top: 9rem;
+    }
+
+    .highlight {
+      padding: 3.5rem 2.5rem;
+      border-right: 1px solid var(--rule);
+      transition: background 0.4s;
+    }
+
+    .highlight:last-child {
+      border-right: none;
+    }
+
+    .highlight:hover {
+      background: rgba(125, 185, 217, 0.03);
+    }
+
+    .highlight-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 3.5rem;
+      color: var(--accent);
+      line-height: 1;
+      display: block;
+      margin-bottom: 1.2rem;
+      opacity: 0.7;
+    }
+
+    .highlight h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      color: var(--cream);
+      margin-bottom: 0.8rem;
+    }
+
+    .highlight p {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.78rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    /* ─── NIGHT INTERLUDE ─── */
+    .interlude {
+      height: 75vh;
+      min-height: 500px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .interlude-bg {
+      position: absolute;
+      inset: 0;
+      background: #000 url('images/photo-07.jpg') center/contain no-repeat;
+      will-change: transform;
+    }
+
+    .interlude-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right,
+          rgba(8, 8, 8, 0.88) 35%,
+          rgba(8, 8, 8, 0.25) 100%);
+    }
+
+    .interlude-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 4rem;
+      max-width: 560px;
+    }
+
+    .interlude-content .label {
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    .interlude-content .display {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 2rem;
+    }
+
+    .interlude-content .body-text {
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─── GALLERY ─── */
+    #gallery {
+      padding: 9rem 0;
+    }
+
+    .gallery-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 4rem;
+      padding: 0 4rem;
+    }
+
+    .gallery-header .display {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+    }
+
+    .gallery-header-right {
+      text-align: right;
+      padding-bottom: 0.4rem;
+    }
+
+    .gallery-header-right .body-text {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .masonry {
+      columns: 3;
+      column-gap: 4px;
+      padding: 0 4rem;
+    }
+
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 4px;
+      overflow: hidden;
+      position: relative;
+      cursor: none;
+    }
+
+    .masonry-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.8s var(--slow), filter 0.5s;
+      filter: brightness(0.92);
+    }
+
+    .masonry-item:hover img {
+      transform: scale(1.03);
+      filter: brightness(1);
+    }
+
+    .masonry-expand {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .masonry-expand svg {
+      color: var(--cream);
+    }
+
+    .masonry-item:hover .masonry-expand {
+      opacity: 1;
+    }
+
+    /* ─── LIGHTBOX ─── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 8, 8, 0.97);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: none;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-wrap {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+
+    .lightbox-wrap img {
+      max-width: 90vw;
+      max-height: 86vh;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -3rem;
+      right: 0;
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: none;
+      transition: color 0.2s;
+    }
+
+    .lightbox-close:hover {
+      color: var(--cream);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: rgba(237, 233, 224, 0.35);
+      cursor: none;
+      transition: color 0.2s;
+      padding: 1rem;
+    }
+
+    .lightbox-prev {
+      left: -4rem;
+    }
+
+    .lightbox-next {
+      right: -4rem;
+    }
+
+    .lightbox-nav:hover {
+      color: var(--cream);
+    }
+
+    /* ─── THE DETAILS (AMENITIES) ─── */
+    #details {
+      padding: 9rem 0;
+      background: var(--deep);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 8rem;
+      align-items: start;
+    }
+
+    .details-intro .label {
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    .details-intro .display {
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 2.5rem;
+    }
+
+    .details-intro .body-text {
+      margin-bottom: 2.5rem;
+    }
+
+    .details-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .detail-item {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+
+    .detail-item:nth-child(odd) {
+      padding-right: 2rem;
+    }
+
+    .detail-item:nth-child(even) {
+      padding-left: 2rem;
+      border-left: 1px solid var(--rule);
+    }
+
+    .detail-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 0.98rem;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+    }
+
+    .detail-desc {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      line-height: 1.6;
+    }
+
+    /* ─── POSITION (LOCATION) ─── */
+    #position {
+      padding: 9rem 0;
+    }
+
+    .position-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7rem;
+      align-items: start;
+    }
+
+    .position-text .label {
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    .position-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 2.5rem;
+      color: var(--cream);
+    }
+
+    .position-text .body-text {
+      margin-bottom: 3rem;
+    }
+
+    .distance-list {
+      list-style: none;
+    }
+
+    .distance-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .distance-item:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .distance-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+
+    .distance-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+    }
+
+    .map-block {
+      position: relative;
+    }
+
+    .map-block iframe {
+      width: 100%;
+      height: 460px;
+      border: none;
+      filter: grayscale(50%) brightness(0.7) contrast(1.2);
+      display: block;
+    }
+
+    .map-caption {
+      padding: 1.5rem 0 0;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .map-caption-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      color: var(--cream);
+    }
+
+    .map-caption-coords {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials {
+      padding: 9rem 0;
+      background: var(--deep);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      overflow: hidden;
+    }
+
+    .testimonials-header {
+      padding: 0 4rem;
+      margin-bottom: 4.5rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .testimonials-header .label {
+      display: block;
+      margin-bottom: 1.8rem;
+    }
+
+    .testimonials-header .display {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+    }
+
+    .testimonials-meta {
+      text-align: right;
+      padding-bottom: 0.5rem;
+    }
+
+    .testimonials-meta .rating {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 3rem;
+      color: var(--cream);
+      line-height: 1;
+    }
+
+    .testimonials-meta .rating-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-top: 0.4rem;
+    }
+
+    .testimonials-scroll {
+      display: flex;
+      gap: 2px;
+      overflow-x: auto;
+      padding: 0 4rem 0;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      cursor: none;
+    }
+
+    .testimonials-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonials-scroll.grabbing {
+      cursor: none;
+    }
+
+    .testimonial-card {
+      flex-shrink: 0;
+      width: 400px;
+      border: 1px solid var(--rule);
+      padding: 3rem;
+      position: relative;
+      transition: border-color 0.4s;
+    }
+
+    .testimonial-card:hover {
+      border-color: rgba(125, 185, 217, 0.25);
+    }
+
+    .testimonial-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 3rem;
+      color: var(--accent);
+      line-height: 0.7;
+      opacity: 0.4;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .testimonial-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1.12rem;
+      line-height: 1.7;
+      color: var(--cream);
+      margin-bottom: 2.5rem;
+    }
+
+    .testimonial-author {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .testimonial-author strong {
+      display: block;
+      color: var(--cream);
+      font-weight: 300;
+      margin-bottom: 0.2rem;
+    }
+
+    /* ─── RESERVE ─── */
+    #reserve {
+      padding: 9rem 0;
+    }
+
+    .reserve-header {
+      margin-bottom: 6rem;
+    }
+
+    .reserve-header .label {
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    .reserve-header .display {
+      font-size: clamp(3rem, 6vw, 6rem);
+      max-width: 700px;
+    }
+
+    .reserve-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+      align-items: start;
+    }
+
+    .reserve-text .body-text {
+      margin-bottom: 1.8rem;
+    }
+
+    .reserve-text .body-text:last-of-type {
+      margin-bottom: 3rem;
+    }
+
+    .reserve-note {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.72rem;
+      line-height: 1.85;
+      color: var(--muted);
+      border-left: 1px solid var(--accent);
+      padding-left: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .reserve-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      border: 1px solid rgba(37, 211, 102, 0.4);
+      color: rgba(37, 211, 102, 0.85);
+      transition: all 0.35s var(--easing);
+    }
+
+    .btn-wa:hover {
+      background: rgba(37, 211, 102, 0.08);
+      border-color: rgba(37, 211, 102, 0.7);
+      color: rgba(37, 211, 102, 1);
+    }
+
+    .btn-wa svg {
+      flex-shrink: 0;
+    }
+
+    .guarantee-note {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .guarantee-note strong {
+      color: var(--accent);
+      font-weight: 300;
+    }
+
+    /* Rates table */
+    .rates-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .rates-table th {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.58rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 0 0 1.2rem;
+      text-align: left;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .rates-table td {
+      padding: 1.3rem 0;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: middle;
+    }
+
+    .rates-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .rate-season {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+    }
+
+    .rate-period {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .rate-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--accent);
+    }
+
+    .house-rules {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .house-rules .label {
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    .rules-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 2rem;
+      list-style: none;
+    }
+
+    .rules-list li {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .rules-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 4px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    /* ─── FAQ ─── */
+    #questions {
+      padding: 9rem 0;
+      background: var(--deep);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 8rem;
+      align-items: start;
+    }
+
+    .questions-intro .label {
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    .questions-intro .display {
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 2rem;
+    }
+
+    .questions-intro .body-text {
+      color: var(--muted);
+    }
+
+    .faq-list {
+      padding-top: 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      padding: 1.8rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      cursor: none;
+    }
+
+    .faq-q-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      color: var(--cream);
+      transition: color 0.25s;
+    }
+
+    .faq-q:hover .faq-q-text {
+      color: var(--accent);
+    }
+
+    .faq-q-icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.5rem;
+      color: var(--accent);
+      opacity: 0.5;
+      transition: opacity 0.3s, transform 0.3s;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .faq-item.open .faq-q-icon {
+      opacity: 1;
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s var(--slow);
+    }
+
+    .faq-a.open {
+      max-height: 280px;
+    }
+
+    .faq-a-inner {
+      padding-bottom: 2rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.82rem;
+      line-height: 1.95;
+      color: var(--muted);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid var(--rule);
+      padding: 5rem 0 3rem;
+    }
+
+    .footer-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 4rem;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1.5rem;
+      letter-spacing: 0.2em;
+      color: var(--cream);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-brand p {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.72rem;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 260px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.58rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      transition: color 0.25s;
+    }
+
+    .footer-col li:hover {
+      color: var(--cream);
+    }
+
+    .footer-col a {
+      color: inherit;
+      transition: color 0.25s;
+    }
+
+    .footer-col a:hover {
+      color: var(--cream);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: rgba(237, 233, 224, 0.25);
+    }
+
+    .footer-bottom a {
+      color: inherit;
+      transition: color 0.3s;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--accent);
+    }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .wa-float {
+      position: fixed;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      z-index: 400;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(37, 211, 102, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.35s var(--easing);
+      cursor: none;
+    }
+
+    .wa-float:hover {
+      border-color: rgba(37, 211, 102, 0.7);
+      background: rgba(37, 211, 102, 0.06);
+    }
+
+    .wa-float svg {
+      width: 20px;
+      height: 20px;
+      fill: rgba(37, 211, 102, 0.7);
+      transition: fill 0.3s;
+    }
+
+    .wa-float:hover svg {
+      fill: rgba(37, 211, 102, 1);
+    }
+
+    .wa-float-label {
+      position: absolute;
+      right: 58px;
+      white-space: nowrap;
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(37, 211, 102, 0.7);
+      opacity: 0;
+      transform: translateX(6px);
+      transition: all 0.3s var(--easing);
+      pointer-events: none;
+    }
+
+    .wa-float:hover .wa-float-label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 1s var(--slow),
+        transform 1s var(--slow);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-d1 {
+      transition-delay: 0.12s;
+    }
+
+    .reveal-d2 {
+      transition-delay: 0.24s;
+    }
+
+    .reveal-d3 {
+      transition-delay: 0.36s;
+    }
+
+    /* ─── LANGUAGE ─── */
+    [data-lang="hu"] {
+      display: none;
+    }
+
+    body.lang-hu [data-lang="en"] {
+      display: none;
+    }
+
+    body.lang-hu [data-lang="hu"] {
+      display: revert;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+
+      .residence-grid,
+      .position-grid,
+      .reserve-grid,
+      .questions-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight {
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .highlight:last-child {
+        border-bottom: none;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .masonry {
+        columns: 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1.5rem 2rem;
+      }
+
+      nav.scrolled {
+        padding: 1rem 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-mobile-toggle {
+        display: flex;
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        inset: 0;
+        background: rgba(8, 8, 8, 0.98);
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        z-index: 600;
+      }
+
+      .nav-links.open a {
+        font-size: 0.75rem;
+      }
+
+      .wrap,
+      .gallery-header,
+      .testimonials-header,
+      .testimonials-scroll,
+      .manifesto-bar,
+      .interlude-content,
+      .footer-inner {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .masonry {
+        columns: 1;
+        padding: 0 2rem;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .manifesto-bar {
+        flex-wrap: wrap;
+        gap: 2rem 3rem;
+        justify-content: center;
+      }
+
+      .details-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-item:nth-child(even) {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .wa-float {
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+
+      .hero-title {
+        font-size: clamp(4.5rem, 18vw, 8rem);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── PRELOADER ─── -->
+  <div id="preloader">
+    <div class="preloader-name">Casa Blu</div>
+    <div class="preloader-line"></div>
+  </div>
+
+  <!-- ─── CUSTOM CURSOR ─── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ─── NAV ─── -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">Casa Blu</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#residence" data-lang="en">The Residence</a><a href="#residence" data-lang="hu">A Rezidencia</a></li>
+      <li><a href="#gallery" data-lang="en">Gallery</a><a href="#gallery" data-lang="hu">Galéria</a></li>
+      <li><a href="#details" data-lang="en">The Details</a><a href="#details" data-lang="hu">Részletek</a></li>
+      <li><a href="#position" data-lang="en">Position</a><a href="#position" data-lang="hu">Elhelyezkedés</a></li>
+      <li><a href="#testimonials" data-lang="en">Testimonials</a><a href="#testimonials" data-lang="hu">Vélemények</a>
+      </li>
+      <li><a href="#reserve" class="nav-reserve" data-lang="en">Reserve</a><a href="#reserve" class="nav-reserve"
+          data-lang="hu">Foglalás</a></li>
+      <li>
+        <div class="lang-toggle">
+          <button class="lang-btn active" onclick="setLang('en')">EN</button>
+          <span class="lang-sep">/</span>
+          <button class="lang-btn" onclick="setLang('hu')">HU</button>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" id="heroContent">
+      <p class="hero-location" data-lang="en">Marbella &ensp;·&ensp; Andalucía &ensp;·&ensp; Spain</p>
+      <p class="hero-location" data-lang="hu">Marbella &ensp;·&ensp; Andalúzia &ensp;·&ensp; Spanyolország</p>
+      <h1 class="hero-title">Casa Blu</h1>
+      <div class="hero-rule"></div>
+      <p class="hero-tagline" data-lang="en">A private residence on the Andalusian coast.</p>
+      <p class="hero-tagline" data-lang="hu">Privát rezidencia az andalúz parton.</p>
+      <div class="hero-cta">
+        <a href="#reserve" class="btn btn-cream" data-lang="en">Reserve Your Stay</a>
+        <a href="#reserve" class="btn btn-cream" data-lang="hu">Foglaljon Helyet</a>
+        <a href="#residence" class="text-link" data-lang="en">Discover</a>
+        <a href="#residence" class="text-link" data-lang="hu">Felfedezés</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-tick"></div>
+      <span data-lang="en">Scroll</span>
+      <span data-lang="hu">Görgess</span>
+    </div>
+  </section>
+
+  <!-- ─── MANIFESTO BAR ─── -->
+  <div class="manifesto-bar">
+    <div class="manifesto-stat">
+      <span class="manifesto-stat-num">9.7</span>
+      <span class="manifesto-stat-label" data-lang="en">Out of Ten</span>
+      <span class="manifesto-stat-label" data-lang="hu">Tízből</span>
+    </div>
+    <div class="manifesto-divider"></div>
+    <div class="manifesto-stat">
+      <span class="manifesto-stat-num">Twenty</span>
+      <span class="manifesto-stat-label" data-lang="en">Verified Guests</span>
+      <span class="manifesto-stat-label" data-lang="hu">Igazolt Vendég</span>
+    </div>
+    <div class="manifesto-divider"></div>
+    <div class="manifesto-stat">
+      <span class="manifesto-stat-num">160</span>
+      <span class="manifesto-stat-label" data-lang="en">Square Metres</span>
+      <span class="manifesto-stat-label" data-lang="hu">Négyzetméter</span>
+    </div>
+    <div class="manifesto-divider"></div>
+    <div class="manifesto-stat">
+      <span class="manifesto-stat-num">Four</span>
+      <span class="manifesto-stat-label" data-lang="en">Private Suites</span>
+      <span class="manifesto-stat-label" data-lang="hu">Privát Szoba</span>
+    </div>
+    <div class="manifesto-divider"></div>
+    <div class="manifesto-stat">
+      <span class="manifesto-stat-num">Eight</span>
+      <span class="manifesto-stat-label" data-lang="en">Minutes to the Sea</span>
+      <span class="manifesto-stat-label" data-lang="hu">Perc a Tengerig</span>
+    </div>
+  </div>
+
+  <!-- ─── THE RESIDENCE ─── -->
+  <section id="residence">
+    <div class="wrap">
+      <div class="residence-grid">
+        <div class="residence-text reveal">
+          <span class="label" data-lang="en">The Residence</span>
+          <span class="label" data-lang="hu">A Rezidencia</span>
+          <h2 class="display" data-lang="en">Solitude,<br>by design.</h2>
+          <h2 class="display" data-lang="hu">Magány,<br>tervezett.</h2>
+          <p class="body-text" data-lang="en">Tucked within a traditional Andalusian village east of Marbella, Casa Blu
+            is a private residence of 160 square metres. Four suites, each with its own bathroom, arranged around a
+            garden of century-old trees and a private pool that exists entirely out of sight.</p>
+          <p class="body-text" data-lang="hu">Marbellától keletre, egy hagyományos andalúz faluban meghúzódó Casa Blu
+            160 négyzetméteres privát rezidencia. Négy szoba, mindegyik saját fürdőszobával, évszázados fák
+            körülölelésében és egy teljesen zártkörű privát medence közelében.</p>
+          <p class="body-text" data-lang="en">Designed for those who prefer silence over spectacle. The kind of house
+            that asks nothing of you, and gives everything. A sea-view terrace. A bar. A fully equipped kitchen that
+            opens onto the terrace. And a host — TiBi — who leaves a bottle waiting on arrival.</p>
+          <p class="body-text" data-lang="hu">Azoknak tervezték, akik a csendet részesítik előnyben a látványossággal
+            szemben. Olyan ház, amely semmit sem kér tőled, és mindent megad. Tengerre néző terasz. Bár. Teljesen
+            felszerelt konyha, teraszra nyíló kijárattal. És egy szállásadó — TiBi — aki bort hagy neked megérkezésre.
+          </p>
+          <a href="#gallery" class="btn" data-lang="en">View the Interiors</a>
+          <a href="#gallery" class="btn" data-lang="hu">Belső terek megtekintése</a>
+        </div>
+        <div class="residence-image reveal reveal-d2">
+          <img src="images/photo-04.jpg" alt="Casa Blu Marbella — private villa exterior with garden and pool"
+            loading="lazy">
+          <div class="residence-image-caption">
+            <hr>
+            <div class="residence-caption-text">
+              <span data-lang="en">Private garden, Marbella</span>
+              <span data-lang="hu">Privát kert, Marbella</span>
+              <span>Rated 9.7 / 10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlights">
+        <div class="highlight reveal">
+          <span class="highlight-num">I</span>
+          <h3 data-lang="en">The Pool</h3>
+          <h3 data-lang="hu">A Medence</h3>
+          <p data-lang="en">A private pool enclosed by century-old trees and tropical planting. Illuminated at night.
+            Entirely secluded from neighbouring properties.</p>
+          <p data-lang="hu">Privát medence, évszázados fákkal és trópusi növényzettel körülvéve. Éjjel megvilágítva.
+            Teljesen elzárva a szomszédos ingatlanktól.</p>
+        </div>
+        <div class="highlight reveal reveal-d1">
+          <span class="highlight-num">II</span>
+          <h3 data-lang="en">Four Suites</h3>
+          <h3 data-lang="hu">Négy Szoba</h3>
+          <p data-lang="en">Each bedroom has its own en-suite bathroom. Underfloor heating and individual climate
+            control throughout. Accommodates up to ten guests.</p>
+          <p data-lang="hu">Minden hálószobához saját fürdőszoba tartozik. Padlófűtés és egyedi klímaszabályozás
+            mindenütt. Maximum tíz vendéget fogad.</p>
+        </div>
+        <div class="highlight reveal reveal-d2">
+          <span class="highlight-num">III</span>
+          <h3 data-lang="en">The Coast</h3>
+          <h3 data-lang="hu">A Partvidék</h3>
+          <p data-lang="en">Eight minutes on foot to Playa de Artola. Eight minutes by car to the old town of Marbella.
+            Over ten championship golf courses within ten minutes' drive.</p>
+          <p data-lang="hu">Nyolc perc séta a Playa de Artolára. Nyolc perc autóval Marbella óvárosába. Több mint tíz
+            bajnoki golfpálya tíz percen belül.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── NIGHT INTERLUDE ─── -->
+  <div class="interlude">
+    <div class="interlude-bg" id="interludeBg"></div>
+    <div class="interlude-overlay"></div>
+    <div class="interlude-content reveal">
+      <span class="label" data-lang="en">After dark</span>
+      <span class="label" data-lang="hu">Alkonyat után</span>
+      <h2 class="display" data-lang="en">The pool holds<br>the light long<br>after midnight.</h2>
+      <h2 class="display" data-lang="hu">A medence még<br>éjfél után is<br>tartja a fényt.</h2>
+      <p class="body-text" data-lang="en">The garden encloses the house so completely that the outside world ceases to
+        exist. No street noise. No neighbouring lights. Nothing but the sound of warm air through old trees.</p>
+      <p class="body-text" data-lang="hu">A kert olyan teljességgel öleli körül a házat, hogy a külvilág megszűnik
+        létezni. Nincs utcai zaj. Nincsenek szomszédi fények. Csak a meleg levegő zúgása a régi fák között.</p>
+      <a href="#reserve" class="btn btn-cream" data-lang="en">Enquire</a>
+      <a href="#reserve" class="btn btn-cream" data-lang="hu">Érdeklődjön</a>
+    </div>
+  </div>
+
+  <!-- ─── GALLERY ─── -->
+  <section id="gallery">
+    <div class="gallery-header reveal">
+      <div>
+        <span class="label" data-lang="en">The Space</span>
+        <span class="label" data-lang="hu">A Tér</span>
+        <h2 class="display" data-lang="en">Every room,<br>considered.</h2>
+        <h2 class="display" data-lang="hu">Minden szoba,<br>átgondolt.</h2>
+      </div>
+      <div class="gallery-header-right">
+        <p class="body-text" data-lang="en">Select any image to view full screen.</p>
+        <p class="body-text" data-lang="hu">Kattints a teljes képhez.</p>
+      </div>
+    </div>
+    <div class="masonry" id="galleryGrid">
+      <div class="masonry-item" data-index="0">
+        <img src="images/photo-05.jpg" alt="Private pool with tropical garden" loading="lazy">
+        <div class="masonry-expand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+          </svg></div>
+      </div>
+      <div class="masonry-item" data-index="1">
+        <img src="images/photo-07.jpg" alt="Pool at night" loading="lazy">
+        <div class="masonry-expand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+          </svg></div>
+      </div>
+      <div class="masonry-item" data-index="2">
+        <img src="images/photo-04.jpg" alt="Villa exterior" loading="lazy">
+        <div class="masonry-expand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+          </svg></div>
+      </div>
+      <div class="masonry-item" data-index="3">
+        <img src="images/photo-03.jpg" alt="Evening terrace with pergola" loading="lazy">
+        <div class="masonry-expand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+          </svg></div>
+      </div>
+      <div class="masonry-item" data-index="4">
+        <img src="images/photo-11.jpg" alt="Kitchen with pool view" loading="lazy">
+        <div class="masonry-expand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+          </svg></div>
+      </div>
+      <div class="masonry-item" data-index="5">
+        <img src="images/photo-08.jpg" alt="En-suite bathroom" loading="lazy">
+        <div class="masonry-expand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+          </svg></div>
+      </div>
+      <div class="masonry-item" data-index="6">
+        <img src="images/photo-01.jpg" alt="Principal bedroom" loading="lazy">
+        <div class="masonry-expand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+          </svg></div>
+      </div>
+      <div class="masonry-item" data-index="7">
+        <img src="images/photo-02.jpg" alt="Terrace with outdoor dining" loading="lazy">
+        <div class="masonry-expand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+          </svg></div>
+      </div>
+      <div class="masonry-item" data-index="8">
+        <img src="images/photo-09.jpg" alt="Guest suite" loading="lazy">
+        <div class="masonry-expand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+          </svg></div>
+      </div>
+      <div class="masonry-item" data-index="9">
+        <img src="images/photo-10.jpg" alt="Dining room through archway" loading="lazy">
+        <div class="masonry-expand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+          </svg></div>
+      </div>
+      <div class="masonry-item" data-index="10">
+        <img src="images/photo-06.jpg" alt="Second guest suite" loading="lazy">
+        <div class="masonry-expand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+          </svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── LIGHTBOX ─── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox-wrap">
+      <button class="lightbox-close" id="lightboxClose" data-lang="en">Close</button>
+      <button class="lightbox-close" id="lightboxCloseHu" data-lang="hu">Bezárás</button>
+      <button class="lightbox-nav lightbox-prev" id="lbPrev">&#8249;</button>
+      <img id="lightboxImg" src="" alt="">
+      <button class="lightbox-nav lightbox-next" id="lbNext">&#8250;</button>
+    </div>
+  </div>
+
+  <!-- ─── THE DETAILS ─── -->
+  <section id="details">
+    <div class="wrap">
+      <div class="details-grid">
+        <div class="reveal">
+          <span class="label" data-lang="en">In Residence</span>
+          <span class="label" data-lang="hu">A Rezidenciában</span>
+          <h2 class="display" data-lang="en">Nothing<br>overlooked.</h2>
+          <h2 class="display" data-lang="hu">Semmi sem<br>lett figyelmen<br>kívül hagyva.</h2>
+          <p class="body-text" data-lang="en">Every comfort has been considered in advance. Casa Blu is designed to
+            function as a private home, not a rental property. The distinction is felt from the moment you arrive.</p>
+          <p class="body-text" data-lang="hu">Minden kényelmet előre megfontoltak. A Casa Blut magánlakásként tervezték,
+            nem bérleményként. Ez a különbség az érkezés pillanatától érezhető.</p>
+          <a href="#reserve" class="btn" data-lang="en">Enquire About Availability</a>
+          <a href="#reserve" class="btn" data-lang="hu">Érdeklődjön az Elérhetőségről</a>
+        </div>
+        <div class="details-columns reveal reveal-d2">
+          <div class="detail-item">
+            <span class="detail-name" data-lang="en">Private Pool</span>
+            <span class="detail-name" data-lang="hu">Privát medence</span>
+            <span class="detail-desc" data-lang="en">Tropical garden setting, illuminated at night</span>
+            <span class="detail-desc" data-lang="hu">Trópusi kert, éjszakai megvilágítással</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-name" data-lang="en">Sea-View Terrace</span>
+            <span class="detail-name" data-lang="hu">Tengerre néző terasz</span>
+            <span class="detail-desc" data-lang="en">Balcony and terrace with views to the Mediterranean</span>
+            <span class="detail-desc" data-lang="hu">Erkély és terasz Mediterrán-kilátással</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-name" data-lang="en">Park Terrace</span>
+            <span class="detail-name" data-lang="hu">Parkra néző terasz</span>
+            <span class="detail-desc" data-lang="en">Ancient protected trees, complete visual privacy</span>
+            <span class="detail-desc" data-lang="hu">Évszázados védett fák, teljes vizuális privátszféra</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-name" data-lang="en">Climate Control</span>
+            <span class="detail-name" data-lang="hu">Klíma &amp; padlófűtés</span>
+            <span class="detail-desc" data-lang="en">Full underfloor heating and individual air conditioning</span>
+            <span class="detail-desc" data-lang="hu">Teljes padlófűtés és egyéni légkondicionálás</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-name" data-lang="en">Fully Equipped Kitchen</span>
+            <span class="detail-name" data-lang="hu">Teljesen felszerelt konyha</span>
+            <span class="detail-desc" data-lang="en">Induction hob, oven, dishwasher, espresso machine</span>
+            <span class="detail-desc" data-lang="hu">Indukciós lap, sütő, mosogatógép, kávéfőző</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-name" data-lang="en">Bar &amp; Lounge</span>
+            <span class="detail-name" data-lang="hu">Bár és lounge</span>
+            <span class="detail-desc" data-lang="en">Fully appointed indoor bar area</span>
+            <span class="detail-desc" data-lang="hu">Teljesen felszerelt bárterület</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-name" data-lang="en">Outdoor Terrace &amp; Grill</span>
+            <span class="detail-name" data-lang="hu">Kültéri terasz &amp; grill</span>
+            <span class="detail-desc" data-lang="en">Dining terrace with BBQ in the garden</span>
+            <span class="detail-desc" data-lang="hu">Étkezési terasz BBQ-val a kertben</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-name" data-lang="en">Arrival Welcome</span>
+            <span class="detail-name" data-lang="hu">Üdvözlő ajándék</span>
+            <span class="detail-desc" data-lang="en">Wine or champagne, confectionery on arrival</span>
+            <span class="detail-desc" data-lang="hu">Bor vagy pezsgő, sütemény érkezéskor</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-name" data-lang="en">High-Speed Broadband</span>
+            <span class="detail-name" data-lang="hu">Nagy sebességű internet</span>
+            <span class="detail-desc" data-lang="en">104 Mbps WiFi throughout the residence</span>
+            <span class="detail-desc" data-lang="hu">104 Mbps WiFi az egész rezidenciában</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-name" data-lang="en">Private Parking</span>
+            <span class="detail-name" data-lang="hu">Privát parkoló</span>
+            <span class="detail-desc" data-lang="en">On-site parking, complimentary</span>
+            <span class="detail-desc" data-lang="hu">Helyszíni parkoló, ingyenes</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-name" data-lang="en">Linen &amp; Towels</span>
+            <span class="detail-name" data-lang="hu">Ágyneműk és törülközők</span>
+            <span class="detail-desc" data-lang="en">All provided, allergy-free, non-smoking residence</span>
+            <span class="detail-desc" data-lang="hu">Biztosítva, allergiamentes, nemdohányzó rezidencia</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-name" data-lang="en">Private Entrance</span>
+            <span class="detail-name" data-lang="hu">Privát bejárat</span>
+            <span class="detail-desc" data-lang="en">Fully independent access, no shared spaces</span>
+            <span class="detail-desc" data-lang="hu">Teljes függetlenség, közös terek nélkül</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── POSITION ─── -->
+  <section id="position">
+    <div class="wrap">
+      <div class="position-grid">
+        <div class="reveal">
+          <span class="label" data-lang="en">Position</span>
+          <span class="label" data-lang="hu">Elhelyezkedés</span>
+          <h2 class="position-heading" data-lang="en">Moments from<br>the Mediterranean.</h2>
+          <h2 class="position-heading" data-lang="hu">Pillanatokra a<br>Mediterrániumtól.</h2>
+          <p class="body-text" data-lang="en">Set within a traditional Andalusian village east of Marbella, the
+            residence is close enough to the coast to hear it on still nights, yet tucked far enough away that the
+            street remains quiet long after the rest of the Costa del Sol has gone to sleep.</p>
+          <p class="body-text" data-lang="hu">Egy hagyományos andalúz faluban, Marbellától keletre elhelyezkedő
+            rezidencia elég közel van a parthoz ahhoz, hogy csendes éjszakákon hallja az óceánt, mégis elég félreeső
+            helyen van ahhoz, hogy az utca sokáig csöndes maradjon.</p>
+          <ul class="distance-list">
+            <li class="distance-item">
+              <span class="distance-name" data-lang="en">Playa de Artola</span>
+              <span class="distance-name" data-lang="hu">Playa de Artola strand</span>
+              <span class="distance-val" data-lang="en">1.1 km &ensp;·&ensp; 8 min on foot</span>
+              <span class="distance-val" data-lang="hu">1,1 km &ensp;·&ensp; 8 perc gyalog</span>
+            </li>
+            <li class="distance-item">
+              <span class="distance-name" data-lang="en">Cabopino Marina</span>
+              <span class="distance-name" data-lang="hu">Cabopino kikötő</span>
+              <span class="distance-val" data-lang="en">Nearby</span>
+              <span class="distance-val" data-lang="hu">Közelben</span>
+            </li>
+            <li class="distance-item">
+              <span class="distance-name">Nikki Beach</span>
+              <span class="distance-val" data-lang="en">Nearby</span>
+              <span class="distance-val" data-lang="hu">Közelben</span>
+            </li>
+            <li class="distance-item">
+              <span class="distance-name" data-lang="en">Marbella Old Town</span>
+              <span class="distance-name" data-lang="hu">Marbella óváros</span>
+              <span class="distance-val" data-lang="en">8 min by car</span>
+              <span class="distance-val" data-lang="hu">8 perc autóval</span>
+            </li>
+            <li class="distance-item">
+              <span class="distance-name">La Cala Golf</span>
+              <span class="distance-val">16 km</span>
+            </li>
+            <li class="distance-item">
+              <span class="distance-name" data-lang="en">10+ Golf Courses</span>
+              <span class="distance-name" data-lang="hu">10+ golfpálya</span>
+              <span class="distance-val" data-lang="en">Within 10 min</span>
+              <span class="distance-val" data-lang="hu">10 percen belül</span>
+            </li>
+            <li class="distance-item">
+              <span class="distance-name" data-lang="en">Málaga Airport</span>
+              <span class="distance-name" data-lang="hu">Málagai repülőtér</span>
+              <span class="distance-val">42 km</span>
+            </li>
+            <li class="distance-item">
+              <span class="distance-name" data-lang="en">Supermarket &amp; Pharmacy</span>
+              <span class="distance-name" data-lang="hu">Szupermarket és gyógyszertár</span>
+              <span class="distance-val" data-lang="en">Walking distance</span>
+              <span class="distance-val" data-lang="hu">Sétatávolságra</span>
+            </li>
+          </ul>
+        </div>
+        <div class="map-block reveal reveal-d2">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.5!2d-4.726!3d36.511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDMwJzM5LjYiTiA0wrA0Myc0NS42Ilc!5e0!3m2!1sen!2ses!4v1680000000000!5m2!1sen!2ses"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Casa Blu Marbella"></iframe>
+          <div class="map-caption">
+            <span class="map-caption-name">Casa Blu Marbella</span>
+            <span class="map-caption-coords">36°30'N &ensp; 4°43'W</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIALS ─── -->
+  <section id="testimonials">
+    <div class="testimonials-header reveal">
+      <div>
+        <span class="label" data-lang="en">Guest Testimonials</span>
+        <span class="label" data-lang="hu">Vendégvélemények</span>
+        <h2 class="display" data-lang="en">In their<br>own words.</h2>
+        <h2 class="display" data-lang="hu">Saját<br>szavaikkal.</h2>
+      </div>
+      <div class="testimonials-meta">
+        <span class="rating">9.7</span>
+        <span class="rating-label" data-lang="en">Out of Ten &ensp;·&ensp; Booking.com</span>
+        <span class="rating-label" data-lang="hu">Tízből &ensp;·&ensp; Booking.com</span>
+      </div>
+    </div>
+    <div class="testimonials-scroll reveal" id="testimonialsScroll">
+      <div class="testimonial-card">
+        <span class="testimonial-mark">"</span>
+        <p class="testimonial-text">Everything was better than in the pictures. So comfortable and very private.</p>
+        <div class="testimonial-author">
+          <strong>John</strong>
+          <span data-lang="en">United States &ensp;·&ensp; Booking.com</span>
+          <span data-lang="hu">Egyesült Államok &ensp;·&ensp; Booking.com</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="testimonial-mark">"</span>
+        <p class="testimonial-text">The house is absolutely beautiful. Everything you need for a relaxing holiday.</p>
+        <div class="testimonial-author">
+          <strong>Katie</strong>
+          <span data-lang="en">United Kingdom &ensp;·&ensp; Booking.com</span>
+          <span data-lang="hu">Egyesült Királyság &ensp;·&ensp; Booking.com</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="testimonial-mark">"</span>
+        <p class="testimonial-text">Very bright and airy. Very spacious with lots of seating inside and out.</p>
+        <div class="testimonial-author">
+          <strong>Karen</strong>
+          <span data-lang="en">Ireland &ensp;·&ensp; Booking.com</span>
+          <span data-lang="hu">Írország &ensp;·&ensp; Booking.com</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="testimonial-mark">"</span>
+        <p class="testimonial-text">Modern, très fonctionnel, excellent décoration. Un vrai coup de cœur.</p>
+        <div class="testimonial-author">
+          <strong>Hafssa</strong>
+          <span data-lang="en">Morocco &ensp;·&ensp; Booking.com</span>
+          <span data-lang="hu">Marokkó &ensp;·&ensp; Booking.com</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="testimonial-mark">"</span>
+        <p class="testimonial-text">Padlófűtés és légkondicionáló miatt télen is meleg és kellemes. Nagyon ajánlom.</p>
+        <div class="testimonial-author">
+          <strong>Liliana</strong>
+          <span data-lang="en">Belgium &ensp;·&ensp; Booking.com</span>
+          <span data-lang="hu">Belgium &ensp;·&ensp; Booking.com</span>
+        </div>
+      </div>
+      <div class="testimonial-card"
+        style="display:flex; flex-direction:column; justify-content:center; align-items:flex-start; gap:2rem;">
+        <div>
+          <span class="label" data-lang="en">All Reviews</span>
+          <span class="label" data-lang="hu">Összes vélemény</span>
+        </div>
+        <p style="font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic; font-size:1rem; color:var(--muted); line-height:1.7;"
+          data-lang="en">Twenty verified guests. One consistent observation: the house exceeds expectation.</p>
+        <p style="font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic; font-size:1rem; color:var(--muted); line-height:1.7;"
+          data-lang="hu">Húsz igazolt vendég. Egy visszatérő megállapítás: a ház felülmúlja az elvárásokat.</p>
+        <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" class="text-link"
+          data-lang="en">View on Booking.com</a>
+        <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" class="text-link"
+          data-lang="hu">Megtekintés Booking.com-on</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── RESERVE ─── -->
+  <section id="reserve">
+    <div class="wrap">
+      <div class="reserve-header reveal">
+        <span class="label" data-lang="en">Direct Reservations</span>
+        <span class="label" data-lang="hu">Közvetlen Foglalás</span>
+        <h2 class="display" data-lang="en">Reserve<br>your stay.</h2>
+        <h2 class="display" data-lang="hu">Foglalja le<br>tartózkodását.</h2>
+      </div>
+      <div class="reserve-grid">
+        <div class="reserve-text reveal">
+          <p class="body-text" data-lang="en">Casa Blu accepts reservations directly through the owner. There are no
+            booking platforms between you and the house — no added fees, no impersonal process, no hidden charges.</p>
+          <p class="body-text" data-lang="hu">A Casa Blu közvetlenül a tulajdonoson keresztül fogad foglalásokat.
+            Nincsenek foglalási platformok köztetek és a ház között — nincsenek többletdíjak, személytelen folyamatok,
+            rejtett díjak.</p>
+          <p class="body-text" data-lang="en">TiBi speaks English, German and Hungarian. He responds promptly and
+            handles every aspect of your stay personally — from first enquiry through to departure.</p>
+          <p class="body-text" data-lang="hu">TiBi angolul, németül és magyarul is tud. Gyorsan reagál és személyesen
+            kezeli tartózkodásod minden aspektusát — az első érdeklődéstől az indulásig.</p>
+          <div class="reserve-note" data-lang="en">
+            Reserving directly with the owner ensures the best available rate — typically 15 to 20 percent below
+            platform pricing for the same dates.
+          </div>
+          <div class="reserve-note" data-lang="hu">
+            A tulajdonossal való közvetlen foglalás biztosítja a legjobb elérhető árat — jellemzően 15–20 százalékkal
+            alacsonyabb, mint a platformok.
+          </div>
+          <div class="reserve-actions">
+            <!-- REPLACE +34XXXXXXXXX with TiBi's WhatsApp number (country code + number, no spaces) -->
+            <a href="https://wa.me/34XXXXXXXXX?text=Good%20day%2C%20I%20would%20like%20to%20enquire%20about%20a%20reservation%20at%20Casa%20Blu%20Marbella."
+              class="btn-wa" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              <span data-lang="en">Send a WhatsApp Enquiry</span>
+              <span data-lang="hu">WhatsApp üzenet küldése</span>
+            </a>
+            <!-- REPLACE with actual email address if different -->
+            <a href="mailto:casablu.marbella@gmail.com?subject=Reservation%20Enquiry%20%E2%80%94%20Casa%20Blu%20Marbella"
+              class="btn" data-lang="en">Send an Email</a>
+            <a href="mailto:casablu.marbella@gmail.com?subject=Foglalási%20érdeklődés%20—%20Casa%20Blu%20Marbella"
+              class="btn" data-lang="hu">E-mail küldése</a>
+          </div>
+          <div class="guarantee-note" data-lang="en">
+            <strong>Best rate, guaranteed.</strong> Direct reservations carry no booking fees, no cancellation
+            surprises, and the full attention of the owner throughout your stay. A security deposit of up to &euro;1,000
+            applies, returned promptly after departure.
+          </div>
+          <div class="guarantee-note" data-lang="hu">
+            <strong>Legjobb ár, garantálva.</strong> A közvetlen foglalások nem tartalmaznak foglalási díjakat, nem
+            tartalmaznak lemondási meglepetéseket, és a tulajdonos teljes figyelmét élvezheti tartózkodása alatt.
+            Legfeljebb 1 000 &euro; kaució szükséges, amelyet az indulás után haladéktalanul visszautalnak.
+          </div>
+        </div>
+        <div class="reveal reveal-d2">
+          <div class="rates-table">
+            <span class="label" style="display:block; margin-bottom:2rem;" data-lang="en">Seasonal Rates</span>
+            <span class="label" style="display:block; margin-bottom:2rem;" data-lang="hu">Szezonális Árak</span>
+            <table>
+              <thead>
+                <tr>
+                  <th data-lang="en">Season</th>
+                  <th data-lang="hu">Szezon</th>
+                  <th data-lang="en">Period</th>
+                  <th data-lang="hu">Időszak</th>
+                  <th data-lang="en">Per Night</th>
+                  <th data-lang="hu">Éjszakánként</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="rate-season" data-lang="en">Low Season</span><span class="rate-season"
+                      data-lang="hu">Alacsony szezon</span></td>
+                  <td><span class="rate-period">November — March</span></td>
+                  <td><span class="rate-price">— Enquire</span></td>
+                </tr>
+                <tr>
+                  <td><span class="rate-season" data-lang="en">Mid Season</span><span class="rate-season"
+                      data-lang="hu">Közép szezon</span></td>
+                  <td><span class="rate-period">April — May &ensp;·&ensp; October</span></td>
+                  <td><span class="rate-price">— Enquire</span></td>
+                </tr>
+                <tr>
+                  <td><span class="rate-season" data-lang="en">High Season</span><span class="rate-season"
+                      data-lang="hu">Fő szezon</span></td>
+                  <td><span class="rate-period">June &ensp;·&ensp; September</span></td>
+                  <td><span class="rate-price">— Enquire</span></td>
+                </tr>
+                <tr>
+                  <td><span class="rate-season" data-lang="en">Peak Season</span><span class="rate-season"
+                      data-lang="hu">Csúcsszezon</span></td>
+                  <td><span class="rate-period">July — August</span></td>
+                  <td><span class="rate-price">— Enquire</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-family:'Inter',sans-serif; font-weight:200; font-size:0.65rem; color:var(--muted); margin-top:1.5rem; line-height:1.85; letter-spacing:0.04em;"
+              data-lang="en">
+              Rates available on direct enquiry. Minimum stay may apply. Contact TiBi for precise availability and
+              current pricing.
+            </p>
+            <p style="font-family:'Inter',sans-serif; font-weight:200; font-size:0.65rem; color:var(--muted); margin-top:1.5rem; line-height:1.85; letter-spacing:0.04em;"
+              data-lang="hu">
+              Az árak közvetlen érdeklődésre elérhetők. Minimális tartózkodás lehet. Vegye fel a kapcsolatot TiBivel a
+              pontos elérhetőségért és az aktuális árakért.
+            </p>
+          </div>
+          <div class="house-rules">
+            <span class="label" data-lang="en">House Protocol</span>
+            <span class="label" data-lang="hu">Házirend</span>
+            <ul class="rules-list">
+              <li data-lang="en">Check-in 15:00 — 23:30</li>
+              <li data-lang="en">Check-out by 11:00</li>
+              <li data-lang="en">Maximum ten guests</li>
+              <li data-lang="en">No events or gatherings</li>
+              <li data-lang="en">No pets</li>
+              <li data-lang="en">Non-smoking throughout</li>
+              <li data-lang="en">Quiet hours 23:00 — 10:00</li>
+              <li data-lang="hu">Bejelentkezés 15:00 — 23:30</li>
+              <li data-lang="hu">Kijelentkezés 11:00-ig</li>
+              <li data-lang="hu">Maximum tíz vendég</li>
+              <li data-lang="hu">Rendezvények nem megengedettek</li>
+              <li data-lang="hu">Háziállat nem megengedett</li>
+              <li data-lang="hu">Nemdohányzó rezidencia</li>
+              <li data-lang="hu">Csendes időszak 23:00 — 10:00</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── QUESTIONS ─── -->
+  <section id="questions">
+    <div class="wrap">
+      <div class="questions-grid">
+        <div class="reveal">
+          <span class="label" data-lang="en">Questions</span>
+          <span class="label" data-lang="hu">Kérdések</span>
+          <h2 class="display" data-lang="en">Before<br>you arrive.</h2>
+          <h2 class="display" data-lang="hu">Mielőtt<br>megérkezik.</h2>
+          <p class="body-text" data-lang="en">Answers to the questions most often asked before a first reservation. For
+            anything not covered, TiBi responds personally.</p>
+          <p class="body-text" data-lang="hu">Válaszok az első foglalás előtt leggyakrabban feltett kérdésekre. Ha
+            valami nem szerepel itt, TiBi személyesen válaszol.</p>
+        </div>
+        <div class="faq-list reveal reveal-d1">
+          <div class="faq-item">
+            <button class="faq-q">
+              <span class="faq-q-text" data-lang="en">How does a direct reservation work?</span>
+              <span class="faq-q-text" data-lang="hu">Hogyan működik a közvetlen foglalás?</span>
+              <span class="faq-q-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <span data-lang="en">Send your preferred dates by WhatsApp or email. TiBi will confirm availability,
+                  provide exact pricing, and issue a direct payment link. There are no intermediary platforms and no
+                  booking fees. The process takes minutes.</span>
+                <span data-lang="hu">Küldje el a kívánt dátumokat WhatsAppon vagy e-mailben. TiBi megerősíti az
+                  elérhetőséget, megadja a pontos árat, és közvetlen fizetési linket küld. Nincsenek közvetítő
+                  platformok és foglalási díjak. A folyamat perceket vesz igénybe.</span>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span class="faq-q-text" data-lang="en">Is the pool available year-round?</span>
+              <span class="faq-q-text" data-lang="hu">A medence egész évben elérhető?</span>
+              <span class="faq-q-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <span data-lang="en">The pool is unheated, and Marbella's climate makes it swimmable comfortably from
+                  April through October. In winter, the residence is warm throughout — full underfloor heating and
+                  climate control make it an ideal year-round destination, particularly for those visiting the nearby
+                  golf courses.</span>
+                <span data-lang="hu">A medence nem fűtött, és a marbellai éghajlat kényelmes úszást tesz lehetővé
+                  április és október között. Télen a rezidencia mindenütt meleg — teljes padlófűtés és klímavezérlés
+                  teszi ideális egész éves úti célává, különösen a közeli golfpályákat látogatók számára.</span>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span class="faq-q-text" data-lang="en">How many guests may the residence accommodate?</span>
+              <span class="faq-q-text" data-lang="hu">Hány vendéget tud befogadni a rezidencia?</span>
+              <span class="faq-q-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <span data-lang="en">Casa Blu comfortably accommodates eight to ten guests across four suites, each with
+                  its own en-suite bathroom. Well-suited to families, groups of close friends, or two families
+                  travelling together.</span>
+                <span data-lang="hu">A Casa Blu kényelmes elhelyezést biztosít nyolc-tíz vendégnek négy szobában,
+                  mindegyiknek saját fürdőszobával. Ideális családoknak, szoros baráti társaságoknak vagy két együtt
+                  utazó családnak.</span>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span class="faq-q-text" data-lang="en">What is the nearest beach?</span>
+              <span class="faq-q-text" data-lang="hu">Mi a legközelebbi strand?</span>
+              <span class="faq-q-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <span data-lang="en">Playa de Artola is 1.1 kilometres away — approximately eight minutes on foot. A
+                  relatively quiet, natural beach, it represents one of the more unspoiled stretches of the Costa del
+                  Sol. Nikki Beach, Las Cañas, and Cabopino marina are each a short drive away.</span>
+                <span data-lang="hu">A Playa de Artola 1,1 km-re található — körülbelül nyolc perc gyalog. Ez egy
+                  viszonylag csendes, természetes strand, a Costa del Sol egyik természetesebb szakasza. A Nikki Beach,
+                  Las Cañas és a Cabopino kikötő mindegyike rövid autóútra van.</span>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span class="faq-q-text" data-lang="en">What is the deposit arrangement?</span>
+              <span class="faq-q-text" data-lang="hu">Mi a kaució szabálya?</span>
+              <span class="faq-q-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <span data-lang="en">A security deposit of up to &euro;1,000 is held and returned within a few days of
+                  departure, provided the residence is left in its original condition. TiBi manages this directly,
+                  transparently, and without complication.</span>
+                <span data-lang="hu">Legfeljebb 1 000 &euro; kauciót tartanak vissza, és az indulástól számított néhány
+                  napon belül visszautalják, feltéve, hogy a rezidenciát eredeti állapotában hagyják. TiBi ezt
+                  közvetlenül, átláthatóan és bonyodalmak nélkül kezeli.</span>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span class="faq-q-text" data-lang="en">In which languages may I communicate with the owner?</span>
+              <span class="faq-q-text" data-lang="hu">Milyen nyelveken kommunikálhatok a tulajdonossal?</span>
+              <span class="faq-q-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <span data-lang="en">TiBi speaks English, German and Hungarian fluently. Communication is
+                  straightforward from initial enquiry through to departure, regardless of your preferred
+                  language.</span>
+                <span data-lang="hu">TiBi folyékonyan beszél angolul, németül és magyarul. A kommunikáció egyértelmű az
+                  első érdeklődéstől az indulásig, az Ön által preferált nyelvtől függetlenül.</span>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span class="faq-q-text" data-lang="en">Is there a minimum length of stay?</span>
+              <span class="faq-q-text" data-lang="hu">Van minimális tartózkodási idő?</span>
+              <span class="faq-q-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <span data-lang="en">Minimum stay requirements vary by season. Please contact TiBi directly with your
+                  preferred dates and he will advise on availability and any applicable minimums.</span>
+                <span data-lang="hu">A minimális tartózkodási idő szezononként változik. Kérjük, lépjen kapcsolatba
+                  TiBivel közvetlenül a kívánt dátumokkal, és ő tájékoztatja Önt az elérhetőségről és az esetleges
+                  minimumokról.</span>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span class="faq-q-text" data-lang="en">Is Casa Blu suitable for winter visits?</span>
+              <span class="faq-q-text" data-lang="hu">Megfelelő a Casa Blu téli látogatásra?</span>
+              <span class="faq-q-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <span data-lang="en">Entirely. With full underfloor heating and climate control throughout, the
+                  residence is comfortable in every season. Marbella rarely falls below 12°C in winter, and the
+                  proximity of over ten golf courses — including La Cala Golf at 16km — makes it a particularly
+                  sought-after winter destination for golfers.</span>
+                <span data-lang="hu">Teljesen. Teljes padlófűtéssel és klímavezérlővel, a rezidencia minden évszakban
+                  kényelmes. Marbellában télen ritkán süllyed 12°C alá a hőmérséklet, és több mint tíz golfpálya
+                  közelisége — beleértve a 16 km-re lévő La Cala Golft — különösen keresett téli célponttá teszi
+                  golfozók számára.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-brand-name">Casa Blu</span>
+          <p data-lang="en">A private residence on the Andalusian coast. Direct reservations with the owner — no
+            platform fees, no intermediaries.</p>
+          <p data-lang="hu">Privát rezidencia az andalúz parton. Közvetlen foglalás a tulajdonossal — platform díjak és
+            közvetítők nélkül.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang="en">Navigate</h4>
+          <h4 data-lang="hu">Navigáció</h4>
+          <ul>
+            <li><a href="#residence" data-lang="en">The Residence</a><a href="#residence" data-lang="hu">A
+                Rezidencia</a></li>
+            <li><a href="#gallery" data-lang="en">Gallery</a><a href="#gallery" data-lang="hu">Galéria</a></li>
+            <li><a href="#details" data-lang="en">The Details</a><a href="#details" data-lang="hu">Részletek</a></li>
+            <li><a href="#position" data-lang="en">Position</a><a href="#position" data-lang="hu">Elhelyezkedés</a></li>
+            <li><a href="#testimonials" data-lang="en">Testimonials</a><a href="#testimonials"
+                data-lang="hu">Vélemények</a></li>
+            <li><a href="#questions" data-lang="en">Questions</a><a href="#questions" data-lang="hu">Kérdések</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang="en">Reserve</h4>
+          <h4 data-lang="hu">Foglalás</h4>
+          <ul>
+            <li><a href="#reserve" data-lang="en">Direct Reservation</a><a href="#reserve" data-lang="hu">Közvetlen
+                foglalás</a></li>
+            <!-- REPLACE with actual Booking.com property URL -->
+            <li><a href="https://www.booking.com" target="_blank" rel="noopener" data-lang="en">View on
+                Booking.com</a><a href="https://www.booking.com" target="_blank" rel="noopener"
+                data-lang="hu">Booking.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang="en">Contact</h4>
+          <h4 data-lang="hu">Kapcsolat</h4>
+          <ul>
+            <li>TiBi</li>
+            <li data-lang="en">English &ensp; German &ensp; Hungarian</li>
+            <li data-lang="hu">Angol &ensp; Német &ensp; Magyar</li>
+            <!-- REPLACE with Instagram handle -->
+            <li style="margin-top:0.5rem;"><a href="#" target="_blank" rel="noopener" data-lang="en">Instagram</a><a
+                href="#" target="_blank" rel="noopener" data-lang="hu">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-lang="en">Casa Blu Marbella &ensp;&mdash;&ensp; License VUT / MA / 695766</span>
+        <span data-lang="hu">Casa Blu Marbella &ensp;&mdash;&ensp; Engedély: VUT / MA / 695766</span>
+        <span>
+          <a href="https://www.booking.com" target="_blank" rel="noopener">Booking.com</a>
+          &ensp;&mdash;&ensp;
+          <a href="#questions" data-lang="en">FAQ</a>
+          <a href="#questions" data-lang="hu">GYIK</a>
+          &ensp;&mdash;&ensp;
+          <span>Marbella, Andalucía, Spain</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── WHATSAPP FLOAT ─── -->
+  <!-- REPLACE +34XXXXXXXXX with TiBi's WhatsApp number -->
+  <a href="https://wa.me/34XXXXXXXXX?text=Good%20day%2C%20I%20would%20like%20to%20enquire%20about%20Casa%20Blu%20Marbella."
+    class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp enquiry">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+    <span class="wa-float-label" data-lang="en">Enquire</span>
+    <span class="wa-float-label" data-lang="hu">Érdeklődjön</span>
+  </a>
+
+  <!-- ─── JAVASCRIPT ─── -->
+  <script>
+    // ── Preloader
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      setTimeout(() => {
+        preloader.classList.add('hidden');
+        document.getElementById('heroContent').classList.add('visible');
+      }, 1200);
+    });
+
+    // ── Custom cursor
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = -100, my = -100, rx = -100, ry = -100;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx + 'px';
+      cursor.style.top = my + 'px';
+    });
+
+    // Ring follows with slight lag
+    (function animateRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(animateRing);
+    })();
+
+    const hoverTargets = 'a, button, .masonry-item, .faq-q, .testimonial-card';
+    document.querySelectorAll(hoverTargets).forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.classList.add('hovering');
+        ring.classList.add('hovering');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hovering');
+        ring.classList.remove('hovering');
+      });
+    });
+
+    // ── Sticky nav
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    }, { passive: true });
+
+    // ── Mobile nav
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.addEventListener('click', e => {
+      if (e.target.tagName === 'A') navLinks.classList.remove('open');
+    });
+
+    // ── Language toggle
+    function setLang(lang) {
+      document.body.classList.toggle('lang-hu', lang === 'hu');
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+      });
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
+      });
+    }
+
+    // ── Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // ── Parallax: hero + interlude
+    const heroBg = document.getElementById('heroBg');
+    const intBg = document.getElementById('interludeBg');
+    window.addEventListener('scroll', () => {
+      const sy = window.scrollY;
+      if (heroBg) heroBg.style.transform = `translateY(${sy * 0.3}px)`;
+      if (intBg) {
+        const rect = intBg.closest('.interlude').getBoundingClientRect();
+        intBg.style.transform = `translateY(${-rect.top * 0.15}px)`;
+      }
+    }, { passive: true });
+
+    // ── Gallery lightbox
+    const galleryItems = document.querySelectorAll('.masonry-item');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const images = Array.from(galleryItems).map(i => ({
+      src: i.querySelector('img').src,
+      alt: i.querySelector('img').alt
+    }));
+    let lbIdx = 0;
+
+    function openLb(idx) {
+      lbIdx = idx;
+      lbImg.src = images[idx].src;
+      lbImg.alt = images[idx].alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLb() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function navLb(dir) {
+      lbIdx = (lbIdx + dir + images.length) % images.length;
+      lbImg.style.opacity = '0';
+      setTimeout(() => {
+        lbImg.src = images[lbIdx].src;
+        lbImg.alt = images[lbIdx].alt;
+        lbImg.style.opacity = '1';
+      }, 150);
+    }
+
+    lbImg.style.transition = 'opacity 0.3s';
+    galleryItems.forEach((item, i) => item.addEventListener('click', () => openLb(i)));
+    document.getElementById('lightboxClose').addEventListener('click', closeLb);
+    document.getElementById('lightboxCloseHu').addEventListener('click', closeLb);
+    document.getElementById('lbPrev').addEventListener('click', () => navLb(-1));
+    document.getElementById('lbNext').addEventListener('click', () => navLb(1));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLb();
+      if (e.key === 'ArrowLeft') navLb(-1);
+      if (e.key === 'ArrowRight') navLb(1);
+    });
+
+    // ── FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item.querySelector('.faq-a');
+        const icon = btn.querySelector('.faq-q-icon');
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-a').classList.remove('open');
+          i.querySelector('.faq-q-icon').textContent = '+';
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          answer.classList.add('open');
+          icon.textContent = '+';
+        }
+      });
+    });
+
+    // ── Testimonials drag scroll
+    const tScroll = document.getElementById('testimonialsScroll');
+    let tDown = false, tStartX, tLeft;
+    tScroll.addEventListener('mousedown', e => {
+      tDown = true;
+      tScroll.classList.add('grabbing');
+      tStartX = e.pageX - tScroll.offsetLeft;
+      tLeft = tScroll.scrollLeft;
+    });
+    ['mouseleave', 'mouseup'].forEach(ev => tScroll.addEventListener(ev, () => {
+      tDown = false; tScroll.classList.remove('grabbing');
+    }));
+    tScroll.addEventListener('mousemove', e => {
+      if (!tDown) return;
+      e.preventDefault();
+      tScroll.scrollLeft = tLeft - (e.pageX - tScroll.offsetLeft - tStartX) * 1.4;
+    });
+  </script>
+</body>
+
+</html>
