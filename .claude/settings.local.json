@@ -7,7 +7,8 @@
       "Bash(cp /Users/zala-kovacslazar/Downloads/526378837.jpg /Users/zala-kovacslazar/casa-blu-marbella/images/photo-02.jpg)",
       "Bash(cp /Users/zala-kovacslazar/Downloads/648453985.jpg /Users/zala-kovacslazar/casa-blu-marbella/images/photo-03.jpg)",
       "Bash(cp /Users/zala-kovacslazar/Downloads/652526306.jpg /Users/zala-kovacslazar/casa-blu-marbella/images/photo-04.jpg)",
-      "Bash(open:*)"
+      "Bash(open:*)",
+      "Bash(grep -E \"\\\\.\\(jsx?|tsx?|html|md\\)$\")"
     ]
   }
 }
