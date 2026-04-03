@@ -169,7 +169,7 @@ export default function App() {
                   scrolling="no"
                   marginHeight="0"
                   marginWidth="0"
-                  src="https://maps.google.com/maps?q=Urbanización%20Pueblo%20Andaluz%20160%2C%20Marbella&output=embed"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=Urb.+Pueblo+Andaluz+160,+29604+Marbella,+M%C3%A1laga,+Spain"
                   className="rounded-lg"
                 ></iframe>
               </div>
